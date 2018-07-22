@@ -1,0 +1,1 @@
+cl /EHsc /O2 /Qvec-report:1 /I ../ /Tptest.cc ../visa64.lib /link /out:test.exe 
