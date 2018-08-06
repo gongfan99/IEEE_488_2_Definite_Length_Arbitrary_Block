@@ -1,8 +1,22 @@
+/**
+    IEEE_488_2_Definite_Length_Arbitrary_Block.h
+    Purpose: build and parse IEEE 488.2 Definite Length Arbitrary Block
+
+    @author Fan Gong
+    @version 1.0 07/03/18 
+*/
+
 #pragma once
 
 #include <vector>
 #include <string>
 
+/**
+    Build IEEE 488.2 Definite Length Arbitrary Block from input vector data.
+
+    @param in The input vector data. It can be any numeric type e.g. char, float, double.
+    @return Binary block data
+*/
 template<class T>
 std::string build_IEEE_488_2_Definite_Length_Arbitrary_Block(const std::vector<T>& in){
   int byte_count = in.size() * sizeof(T);
@@ -13,6 +27,12 @@ std::string build_IEEE_488_2_Definite_Length_Arbitrary_Block(const std::vector<T
   return out;
 }
 
+/**
+    Parse IEEE 488.2 Definite Length Arbitrary Block.
+
+    @param in The IEEE 488.2 Definite Length Arbitrary Block.
+    @return output vector data
+*/
 template<class T>
 std::vector<T> parse_IEEE_488_2_Definite_Length_Arbitrary_Block(const std::string& in){  
   if (in.substr(0, 1) != "#") throw std::runtime_error("Error: first character should be #.");

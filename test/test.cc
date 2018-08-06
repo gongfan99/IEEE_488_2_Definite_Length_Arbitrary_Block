@@ -1,3 +1,10 @@
+/**
+    test.cc
+    Purpose: read data from the spectrum analyzer
+
+    @author Fan Gong
+    @version 1.0 07/03/18 
+*/
 #include <iostream>
 #include <fstream>
 #include <vector>
